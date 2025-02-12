@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1075550527914",
+    "project_id": "todo-ja24vc",
+    "storage_bucket": "todo-ja24vc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075550527914:android:9e7fadbbf135afcf7c4bd3",
+        "android_client_info": {
+          "package_name": "com.mycompany.todo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCX_ukyLBK0FxCgtOYW4PEgpePCY8PTXV8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
