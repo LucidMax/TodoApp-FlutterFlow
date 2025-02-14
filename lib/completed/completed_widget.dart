@@ -5,25 +5,25 @@ import '/components/task_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'tasks_model.dart';
-export 'tasks_model.dart';
+import 'completed_model.dart';
+export 'completed_model.dart';
 
-class TasksWidget extends StatefulWidget {
-  const TasksWidget({super.key});
+class CompletedWidget extends StatefulWidget {
+  const CompletedWidget({super.key});
 
   @override
-  State<TasksWidget> createState() => _TasksWidgetState();
+  State<CompletedWidget> createState() => _CompletedWidgetState();
 }
 
-class _TasksWidgetState extends State<TasksWidget> {
-  late TasksModel _model;
+class _CompletedWidgetState extends State<CompletedWidget> {
+  late CompletedModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => TasksModel());
+    _model = createModel(context, () => CompletedModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -94,7 +94,7 @@ class _TasksWidgetState extends State<TasksWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                 child: Text(
-                  'Tasks',
+                  'Completed',
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
                         fontFamily: 'Inter',
                         letterSpacing: 0.0,
@@ -104,10 +104,15 @@ class _TasksWidgetState extends State<TasksWidget> {
               Expanded(
                 child: StreamBuilder<List<TasksRecord>>(
                   stream: queryTasksRecord(
-                    queryBuilder: (tasksRecord) => tasksRecord.where(
-                      'user',
-                      isEqualTo: currentUserReference,
-                    ),
+                    queryBuilder: (tasksRecord) => tasksRecord
+                        .where(
+                          'user',
+                          isEqualTo: currentUserReference,
+                        )
+                        .where(
+                          'completed',
+                          isEqualTo: true,
+                        ),
                   ),
                   builder: (context, snapshot) {
                     // Customize what your widget looks like when it's loading.
@@ -155,7 +160,7 @@ class _TasksWidgetState extends State<TasksWidget> {
                           },
                           child: TaskWidget(
                             key: Key(
-                                'Key0ti_${listViewIndex}_of_${listViewTasksRecordList.length}'),
+                                'Key9fd_${listViewIndex}_of_${listViewTasksRecordList.length}'),
                             taskDoc: listViewTasksRecord,
                             checkAction: () async {},
                           ),
