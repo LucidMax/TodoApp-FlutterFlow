@@ -4,12 +4,16 @@ import '/components/add_task_widget.dart';
 import '/components/task_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'tasks_model.dart';
 export 'tasks_model.dart';
 
 class TasksWidget extends StatefulWidget {
   const TasksWidget({super.key});
+
+  static String routeName = 'tasks';
+  static String routePath = '/tasks';
 
   @override
   State<TasksWidget> createState() => _TasksWidgetState();
@@ -141,7 +145,7 @@ class _TasksWidgetState extends State<TasksWidget> {
                           highlightColor: Colors.transparent,
                           onTap: () async {
                             context.pushNamed(
-                              'details',
+                              DetailsWidget.routeName,
                               queryParameters: {
                                 'taskDoc': serializeParam(
                                   listViewTasksRecord,
