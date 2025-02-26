@@ -83,17 +83,15 @@ class _LoginWidgetState extends State<LoginWidget>
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Image.asset(
-                          'assets/images/305TaskLogo.png',
-                          width: 120.0,
-                          fit: BoxFit.contain,
-                        ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.asset(
+                        'assets/images/305TaskLogo.png',
+                        width: 200.0,
+                        height: 200.0,
+                        fit: BoxFit.cover,
                       ),
                     ),
                     Container(
